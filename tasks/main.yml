@@ -1,7 +1,9 @@
 ---
 # tasks file for deploy_packages
 - name: Deploy Package(s) to Servers
-  yum:
-    name: "{{ pkg_name }}"
-    state: "{{ pkg_state }}"
+  service:
+    name: "{{ item.svc_name }}"
+    state: "{{ item.svc_state }}"
+    enabled: "{{ item.svc_enabled }}"
   when: pkg_name is defined
+  loop: "{{ svc }}"
