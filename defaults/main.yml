@@ -1,4 +1,4 @@
 ---
 # defaults file for deploy_packages
-svc_state: running
+svc_state: started
 svc_enabled: enabled

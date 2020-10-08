@@ -30,15 +30,15 @@ Including an example of how to use your role (for instance, with variables passe
 
 
     ---
-    - name: Install Software Packages
+    - name: Manage Services
       hosts: serverc
       vars:
-        pkg_name:
-          - vim
-          - tree
-          - httpd
+        svc:
+          - svc_name: httpd
+            svc_state: started
+            svc_enabled: yes
       roles:
-        - tmichett.deploy_packages
+        - tmichett.manage_services
 
 
 
